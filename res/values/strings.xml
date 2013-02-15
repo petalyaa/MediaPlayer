@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Media Player</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Dummy Button</string>
+
+    <!-- Player -->
+    <string name="artist_name">Artist</string>
+    <string name="song_title">Title</string>
+    <string name="album_name">Album</string>
+    <string name="separator">:</string>
+    <string name="no_song_selected">No song selected</string>
+    <string name="content_description_previous">Previous</string>
+    <string name="content_description_rewind">Rewind</string>
+    <string name="content_description_pause">Pause</string>
+    <string name="content_description_stop">Stop</string>
+    <string name="content_description_play">Play</string>
+    <string name="content_description_forward">Forward</string>
+    <string name="content_description_next">Next song</string>
+    <string name="content_description_shuffle">Shuffle Playlist</string>
+    <string name="content_description_repeat">Repeat song</string>
+    <string name="default_time">0:00</string>
+	<string name="time_separator">/</string>
+	<string name="content_description_album_art">Album Art</string>
+    	
+</resources>
