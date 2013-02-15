@@ -1,6 +1,8 @@
 package org.pet.mediaplayer;
 
-public class BasePlayer {
+import android.content.Context;
+
+public abstract class BasePlayer {
 
 	public static enum PlayerState {
 		PAUSE, PLAY, STOP;
@@ -8,10 +10,13 @@ public class BasePlayer {
 	
 	private AudioFile audioFile;
 	
+	protected Context context;
+	
 	private PlayerState state;
 	
-	public BasePlayer(AudioFile audioFile) {
+	public BasePlayer(Context context, AudioFile audioFile) {
 		this.setAudioFile(audioFile);
+		this.context = context;
 	}
 
 	public AudioFile getAudioFile() {

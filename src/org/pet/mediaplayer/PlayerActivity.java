@@ -2,6 +2,7 @@ package org.pet.mediaplayer;
 
 import java.io.File;
 
+import org.pet.mediaplayer.BasePlayer.PlayerState;
 import org.pet.mediaplayer.listener.OnAudioSeekBarChangeListener;
 import org.pet.mediaplayer.listener.OnPauseButtonClickListener;
 import org.pet.mediaplayer.listener.OnPlayButtonClickListener;
@@ -33,10 +34,34 @@ public class PlayerActivity extends Activity {
 	
 	private static final String TAG = PlayerActivity.class.getName();
 	
+	private static Player player;
+	
+	private SeekBar songSeekBar;
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+	}
+
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if(player != null && PlayerState.PLAY.equals(player.getState())) {
+			player.onPlayerResume(songSeekBar);
+		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		player.onPlayerDestroy();
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d(TAG, "Creating application...");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_player);
@@ -51,7 +76,7 @@ public class PlayerActivity extends Activity {
 		TextView albumName = (TextView) findViewById(R.id.album_name);
 		TextView endTime = (TextView) findViewById(R.id.end_time);
 		final TextView startTime = (TextView) findViewById(R.id.start_time);
-		SeekBar songProgressBar = (SeekBar) findViewById(R.id.song_seekbar);
+		songSeekBar = (SeekBar) findViewById(R.id.song_seekbar);
 		
 		ImageButton playButton = (ImageButton) findViewById(R.id.play_button);
 		ImageButton stopButton = (ImageButton) findViewById(R.id.stop_button);
@@ -59,8 +84,10 @@ public class PlayerActivity extends Activity {
 		
 		// TODO : For now, test using mp3, next check file type, then use appropriate player to play the audio.
 		MP3File mp3 = new MP3File(mp3File);
-		Player player = new MP3Player(mp3, songProgressBar);
-		
+		if(player == null) {
+			player = new MP3Player(getApplicationContext(), mp3, songSeekBar);
+		} 
+		player.resetSeekBar(songSeekBar);
 		byte[] albumArt = mp3.getAlbumArt();
 		if(albumArt != null) {
 			Log.v(TAG, "Album art exist.");
@@ -78,8 +105,8 @@ public class PlayerActivity extends Activity {
 		
 		OnSeekBarChangeListener seekBarChangeListener = new OnAudioSeekBarChangeListener(startTime, player, getApplicationContext());
 		
-		songProgressBar.setMax((int) originalDuration);
-		songProgressBar.setOnSeekBarChangeListener(seekBarChangeListener);
+		songSeekBar.setMax((int) originalDuration);
+		songSeekBar.setOnSeekBarChangeListener(seekBarChangeListener);
 		
 		// Setup all button
 		OnClickListener onPlayButtonClickListener = new OnPlayButtonClickListener(player, getApplicationContext());
@@ -89,9 +116,6 @@ public class PlayerActivity extends Activity {
 		playButton.setOnClickListener(onPlayButtonClickListener);
 		stopButton.setOnClickListener(onStopButtonClickListener);
 		pauseButton.setOnClickListener(onPauseButtonClickListener);
-		
-		
-		
 		
 	}
 
