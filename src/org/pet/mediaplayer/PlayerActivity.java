@@ -41,8 +41,10 @@ public class PlayerActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_player);
 		
+		// TODO : Change below chunk to read file from media server. Hardcoded just for POC!
 		File sdCard= Environment.getExternalStorageDirectory();
 		File mp3File = new File(sdCard, "/Music/Mezmerize/BYOB.mp3");
+		// Getting file list done.
 		
 		TextView songTitle = (TextView) findViewById(R.id.song_title);
 		TextView artistName = (TextView) findViewById(R.id.artist_name);
@@ -55,6 +57,7 @@ public class PlayerActivity extends Activity {
 		ImageButton stopButton = (ImageButton) findViewById(R.id.stop_button);
 		ImageButton pauseButton = (ImageButton) findViewById(R.id.pause_button);
 		
+		// TODO : For now, test using mp3, next check file type, then use appropriate player to play the audio.
 		MP3File mp3 = new MP3File(mp3File);
 		Player player = new MP3Player(mp3, songProgressBar);
 		
