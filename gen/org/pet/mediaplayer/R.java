@@ -53,6 +53,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int end_time=0x7f07000a;
         public static final int equalizer_button=0x7f070018;
         public static final int forward_button=0x7f070013;
+        public static final int fragment_middle=0x7f07001d;
         public static final int library_button=0x7f070016;
         public static final int mute_button=0x7f070015;
         public static final int next_song_button=0x7f070014;
@@ -74,6 +75,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class layout {
         public static final int activity_player=0x7f030000;
+        public static final int equalizer_view=0x7f030001;
+        public static final int library_view=0x7f030002;
+        public static final int visualization_view=0x7f030003;
     }
     public static final class string {
         public static final int album_name=0x7f050005;
@@ -99,6 +103,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int dummy_button=0x7f050002;
         public static final int dummy_content=0x7f050001;
         public static final int end_of_list=0x7f05001d;
+        /**  Equalizer 
+         */
+        public static final int equalizer_title=0x7f05001e;
+        /**  Library 
+         */
+        public static final int library_title=0x7f050020;
         public static final int no_song_selected=0x7f050007;
         public static final int repeat_all=0x7f050019;
         public static final int repeat_off=0x7f05001a;
@@ -108,6 +118,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int shuffle_on=0x7f05001b;
         public static final int song_title=0x7f050004;
         public static final int time_separator=0x7f050016;
+        /**  Visualization 
+         */
+        public static final int visualization_title=0x7f05001f;
     }
     public static final class style {
         /** 

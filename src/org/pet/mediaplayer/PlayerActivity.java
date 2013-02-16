@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.pet.mediaplayer.BasePlayer.PlayerState;
 import org.pet.mediaplayer.listener.OnAudioSeekBarChangeListener;
+import org.pet.mediaplayer.listener.OnEqualizerButtonClickListener;
+import org.pet.mediaplayer.listener.OnLibraryButtonClickListener;
 import org.pet.mediaplayer.listener.OnMuteButtonClickListener;
 import org.pet.mediaplayer.listener.OnNextTrackButtonClickListener;
 import org.pet.mediaplayer.listener.OnPlayPauseButtonClickListener;
@@ -13,6 +15,7 @@ import org.pet.mediaplayer.listener.OnPreviousTrackButtonClickLitener;
 import org.pet.mediaplayer.listener.OnRepeatButtonClickListener;
 import org.pet.mediaplayer.listener.OnShuffleButtonClickListener;
 import org.pet.mediaplayer.listener.OnStopButtonClickListener;
+import org.pet.mediaplayer.listener.OnVisualizationButtonClickListener;
 import org.pet.mediaplayer.mp3.MP3Player;
 import org.pet.mediaplayer.util.SystemUiHider;
 
@@ -20,7 +23,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -100,6 +105,14 @@ public class PlayerActivity extends Activity {
 		ImageButton repeatButton = (ImageButton) findViewById(R.id.repeat_button);
 		ImageButton previousButton = (ImageButton) findViewById(R.id.previous_song_button);
 		ImageButton nextButton = (ImageButton) findViewById(R.id.next_song_button);
+		ImageButton equalizerButton = (ImageButton) findViewById(R.id.equalizer_button);
+		ImageButton visualizationButton = (ImageButton) findViewById(R.id.visualization_button);
+		ImageButton libraryButton = (ImageButton) findViewById(R.id.library_button);
+		
+		final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.fragment_middle);
+		View visualizationView = View.inflate(this, R.layout.visualization_view, null);
+		viewGroup.removeAllViews();
+		viewGroup.addView(visualizationView);
 		
 		// TODO : For now, test using mp3, next check file type, then use appropriate player to play the audio.
 		InfoPanelView infoPanel = new InfoPanelView(albumName, songTitle, artistName, endTime);
@@ -122,6 +135,9 @@ public class PlayerActivity extends Activity {
 		OnClickListener onPlayPauseButtonClickListener = new OnPlayPauseButtonClickListener(player, getApplicationContext(), playPauseButton);
 		OnClickListener onNextButtonClickListener = new OnNextTrackButtonClickListener(player, getApplicationContext());
 		OnClickListener onPreviousButtonClickListener = new OnPreviousTrackButtonClickLitener(player, getApplicationContext());
+		OnClickListener onEqualizerButtonClickListener = new OnEqualizerButtonClickListener(player, getApplicationContext(), viewGroup);
+		OnClickListener onVisualizationButtonClickListener = new OnVisualizationButtonClickListener(player, getApplicationContext(), viewGroup);
+		OnClickListener onLibraryButtonClickListener = new OnLibraryButtonClickListener(player, getApplicationContext(), viewGroup);
 		
 		shuffleButton.setOnClickListener(onShuffleButtonClickListener);
 		repeatButton.setOnClickListener(onRepeatButtonClickListener);
@@ -130,6 +146,9 @@ public class PlayerActivity extends Activity {
 		stopButton.setOnClickListener(onStopButtonClickListener);
 		nextButton.setOnClickListener(onNextButtonClickListener);
 		previousButton.setOnClickListener(onPreviousButtonClickListener);
+		equalizerButton.setOnClickListener(onEqualizerButtonClickListener);
+		visualizationButton.setOnClickListener(onVisualizationButtonClickListener);
+		libraryButton.setOnClickListener(onLibraryButtonClickListener);
 		
 	}
 	

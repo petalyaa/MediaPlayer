@@ -33,5 +33,13 @@
 	<string name="shuffle_on">Shuffle on</string>
 	<string name="shuffle_off">Shuffle off</string>
 	<string name="end_of_list">Reaching end of list.</string>
-    	
+	
+	<!-- Equalizer -->
+	<string name="equalizer_title">Equalizer</string>
+	
+	<!-- Visualization -->
+	<string name="visualization_title">Visualization</string>
+	
+	<!-- Library -->	
+    <string name="library_title">Library</string>
 </resources>
