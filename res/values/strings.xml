@@ -15,7 +15,11 @@
     <string name="content_description_rewind">Rewind</string>
     <string name="content_description_pause">Pause</string>
     <string name="content_description_stop">Stop</string>
+    <string name="content_description_mute">Mute</string>
     <string name="content_description_play">Play</string>
+    <string name="content_description_equalizer">Equalizer</string>
+    <string name="content_description_visualization">Visualization</string>
+    <string name="content_description_library">Library</string>
     <string name="content_description_forward">Forward</string>
     <string name="content_description_next">Next song</string>
     <string name="content_description_shuffle">Shuffle Playlist</string>
@@ -23,5 +27,10 @@
     <string name="default_time">0:00</string>
 	<string name="time_separator">/</string>
 	<string name="content_description_album_art">Album Art</string>
+	<string name="repeat_song">Repeat song</string>
+	<string name="repeat_all">Repeat all</string>
+	<string name="repeat_off">Repeat off</string>
+	<string name="shuffle_on">Shuffle on</string>
+	<string name="shuffle_off">Shuffle off</string>
     	
 </resources>
