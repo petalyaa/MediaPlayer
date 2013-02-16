@@ -226,8 +226,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/visualization_button"
-        android:contentDescription="@string/content_description_library"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/content_description_library"
         android:src="@drawable/library" />
 
     <ImageButton
@@ -294,12 +294,14 @@
         android:text="@string/repeat_off"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/fragment_middle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/previous_song_button"
-        android:layout_alignLeft="@+id/album_name_label"
-        android:layout_below="@+id/album_name_label" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/album_name_label"
+        android:orientation="vertical" />
 
 </RelativeLayout>

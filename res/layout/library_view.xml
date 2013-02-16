@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
+    android:id="@+id/main_library_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <ListView
+        android:id="@+id/library_category_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/library_label" >
+
+    </ListView>
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/library_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0.3"
         android:text="@string/library_title"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
 
 </RelativeLayout>

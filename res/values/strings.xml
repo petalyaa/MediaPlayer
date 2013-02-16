@@ -42,4 +42,13 @@
 	
 	<!-- Library -->	
     <string name="library_title">Library</string>
+    <string name="library_back">Back</string>
+    <string name="library_category">category</string>
+    <string-array name="category_list">
+		<item>Artist</item>
+		<item>Album</item>
+		<item>Song</item>
+		<item>Genre</item>
+		<item>Playlist</item>        
+    </string-array>
 </resources>

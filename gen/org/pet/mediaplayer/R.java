@@ -8,6 +8,9 @@
 package org.pet.mediaplayer;
 
 public final class R {
+    public static final class array {
+        public static final int category_list=0x7f060000;
+    }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -22,62 +25,75 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int black_overlay=0x7f040000;
     }
     public static final class drawable {
-        public static final int cover_album=0x7f020000;
-        public static final int equalizer=0x7f020001;
-        public static final int forward=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int library=0x7f020004;
-        public static final int mute=0x7f020005;
-        public static final int next_song=0x7f020006;
-        public static final int off=0x7f020007;
-        public static final int pause=0x7f020008;
-        public static final int play=0x7f020009;
-        public static final int previous_song=0x7f02000a;
-        public static final int repeat=0x7f02000b;
-        public static final int rewind=0x7f02000c;
-        public static final int setting=0x7f02000d;
-        public static final int shuffle=0x7f02000e;
-        public static final int speaker=0x7f02000f;
-        public static final int stop=0x7f020010;
-        public static final int visualization=0x7f020011;
+        public static final int album=0x7f020000;
+        public static final int artist=0x7f020001;
+        public static final int cover_album=0x7f020002;
+        public static final int equalizer=0x7f020003;
+        public static final int equalizer_bg=0x7f020004;
+        public static final int forward=0x7f020005;
+        public static final int genre=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int ic_menu_back=0x7f020008;
+        public static final int library=0x7f020009;
+        public static final int mute=0x7f02000a;
+        public static final int next_song=0x7f02000b;
+        public static final int off=0x7f02000c;
+        public static final int pause=0x7f02000d;
+        public static final int play=0x7f02000e;
+        public static final int playlist=0x7f02000f;
+        public static final int previous_song=0x7f020010;
+        public static final int repeat=0x7f020011;
+        public static final int rewind=0x7f020012;
+        public static final int setting=0x7f020013;
+        public static final int shuffle=0x7f020014;
+        public static final int song=0x7f020015;
+        public static final int speaker=0x7f020016;
+        public static final int stop=0x7f020017;
+        public static final int visualization=0x7f020018;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f070000;
-        public static final int album_art=0x7f07000e;
-        public static final int album_name=0x7f070009;
-        public static final int album_name_label=0x7f070003;
-        public static final int album_separator=0x7f070004;
-        public static final int artist_name=0x7f070008;
-        public static final int artist_name_label=0x7f070002;
-        public static final int artist_separator=0x7f070005;
-        public static final int end_time=0x7f07000a;
-        public static final int equalizer_button=0x7f070018;
-        public static final int forward_button=0x7f070013;
-        public static final int fragment_middle=0x7f07001d;
-        public static final int library_button=0x7f070016;
-        public static final int mute_button=0x7f070015;
-        public static final int next_song_button=0x7f070014;
-        public static final int pause_button=0x7f070012;
-        public static final int previous_song_button=0x7f07000f;
-        public static final int repeat_button=0x7f070019;
-        public static final int repeat_label=0x7f07001c;
-        public static final int rewind_button=0x7f070010;
-        public static final int shuffle_button=0x7f07001a;
-        public static final int shuffle_label=0x7f07001b;
-        public static final int song_seekbar=0x7f07000c;
-        public static final int song_title=0x7f070007;
-        public static final int start_time=0x7f07000b;
-        public static final int stop_button=0x7f070011;
-        public static final int textView1=0x7f07000d;
-        public static final int title_label=0x7f070001;
-        public static final int title_separator=0x7f070006;
-        public static final int visualization_button=0x7f070017;
+        public static final int RelativeLayout1=0x7f080000;
+        public static final int album_art=0x7f08000e;
+        public static final int album_name=0x7f080009;
+        public static final int album_name_label=0x7f080003;
+        public static final int album_separator=0x7f080004;
+        public static final int artist_name=0x7f080008;
+        public static final int artist_name_label=0x7f080002;
+        public static final int artist_separator=0x7f080005;
+        public static final int end_time=0x7f08000a;
+        public static final int equalizer_button=0x7f080018;
+        public static final int forward_button=0x7f080013;
+        public static final int fragment_middle=0x7f08001d;
+        public static final int library_button=0x7f080016;
+        public static final int library_category_image=0x7f08001e;
+        public static final int library_category_label=0x7f08001f;
+        public static final int library_category_view=0x7f080021;
+        public static final int library_label=0x7f080022;
+        public static final int main_library_view=0x7f080020;
+        public static final int mute_button=0x7f080015;
+        public static final int next_song_button=0x7f080014;
+        public static final int pause_button=0x7f080012;
+        public static final int previous_song_button=0x7f08000f;
+        public static final int repeat_button=0x7f080019;
+        public static final int repeat_label=0x7f08001c;
+        public static final int rewind_button=0x7f080010;
+        public static final int shuffle_button=0x7f08001a;
+        public static final int shuffle_label=0x7f08001b;
+        public static final int song_seekbar=0x7f08000c;
+        public static final int song_title=0x7f080007;
+        public static final int start_time=0x7f08000b;
+        public static final int stop_button=0x7f080011;
+        public static final int textView1=0x7f08000d;
+        public static final int title_label=0x7f080001;
+        public static final int title_separator=0x7f080006;
+        public static final int visualization_button=0x7f080017;
     }
     public static final class layout {
         public static final int activity_player=0x7f030000;
         public static final int equalizer_view=0x7f030001;
-        public static final int library_view=0x7f030002;
-        public static final int visualization_view=0x7f030003;
+        public static final int library_category_item_list_view=0x7f030002;
+        public static final int library_view=0x7f030003;
+        public static final int visualization_view=0x7f030004;
     }
     public static final class string {
         public static final int album_name=0x7f050005;
@@ -106,6 +122,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  Equalizer 
          */
         public static final int equalizer_title=0x7f05001e;
+        public static final int library_back=0x7f050021;
+        public static final int library_category=0x7f050022;
         /**  Library 
          */
         public static final int library_title=0x7f050020;
@@ -147,15 +165,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
-        public static final int ButtonBar=0x7f060003;
-        public static final int ButtonBarButton=0x7f060002;
-        public static final int FullscreenActionBarStyle=0x7f060005;
-        public static final int FullscreenTheme=0x7f060004;
+        public static final int AppTheme=0x7f070001;
+        public static final int ButtonBar=0x7f070003;
+        public static final int ButtonBarButton=0x7f070002;
+        public static final int FullscreenActionBarStyle=0x7f070005;
+        public static final int FullscreenTheme=0x7f070004;
     }
     public static final class styleable {
         /** 
