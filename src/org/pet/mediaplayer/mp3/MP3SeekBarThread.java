@@ -42,9 +42,13 @@ public class MP3SeekBarThread implements Runnable {
 		Log.d("CurrentState", "Current state is : " + player.getState());
 		while(!player.getState().equals(PlayerState.STOP) && !term) {
 			if(!player.getState().equals(PlayerState.PAUSE)) {
+				try {
 				int currentPosition = mediaPlayer.getCurrentPosition();
 				Log.v("Current", "Current position : " + currentPosition);
 				seekbar.setProgress(currentPosition);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			
 			try {
