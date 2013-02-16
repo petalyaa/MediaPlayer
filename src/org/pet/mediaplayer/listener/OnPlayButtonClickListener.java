@@ -6,10 +6,15 @@ import org.pet.mediaplayer.exception.PlayerException;
 
 import android.content.Context;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-public class OnPlayButtonClickListener extends BaseListener implements OnClickListener {
+/**
+ * @deprecated Use {@link OnPlayPauseButtonClickListener} instead to toggle play/pause now.
+ * @author khairul.ikhwan
+ *
+ */
+@Deprecated
+public class OnPlayButtonClickListener extends ButtonClickListener {
 	
 	public OnPlayButtonClickListener(Player player, Context context) {
 		super(player, context);
@@ -17,11 +22,11 @@ public class OnPlayButtonClickListener extends BaseListener implements OnClickLi
 
 	@Override
 	public void onClick(View v) {
-		if(!PlayerState.PLAY.equals(getPlayer().getState())) {
+		if(!PlayerState.PLAY.equals(player.getState())) {
 			try {
-				getPlayer().play();
+				player.play();
 			} catch (PlayerException e) {
-				Toast.makeText(getContext(), "Failed!!!", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "Failed!!!", Toast.LENGTH_LONG).show();
 			}
 		}
 	}

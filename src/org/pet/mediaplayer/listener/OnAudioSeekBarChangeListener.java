@@ -6,10 +6,9 @@ import org.pet.mediaplayer.util.TimeUtil;
 
 import android.content.Context;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-public class OnAudioSeekBarChangeListener extends BaseListener implements OnSeekBarChangeListener {
+public class OnAudioSeekBarChangeListener extends SeekbarChangeLitener {
 	
 	private TextView startTime;
 	
@@ -22,7 +21,7 @@ public class OnAudioSeekBarChangeListener extends BaseListener implements OnSeek
 	public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 		try {
 			if(fromUser) {
-				getPlayer().seek(progress);
+				player.seek(progress);
 			}
 			String s = TimeUtil.secondsToString(progress/1000);
 			startTime.setText(s);
