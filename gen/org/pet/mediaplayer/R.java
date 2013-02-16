@@ -23,21 +23,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class drawable {
         public static final int cover_album=0x7f020000;
-        public static final int forward=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int next_song=0x7f020003;
-        public static final int off=0x7f020004;
-        public static final int pause=0x7f020005;
-        public static final int play=0x7f020006;
-        public static final int previous_song=0x7f020007;
-        public static final int repeat=0x7f020008;
-        public static final int rewind=0x7f020009;
-        public static final int shuffle=0x7f02000a;
-        public static final int stop=0x7f02000b;
+        public static final int equalizer=0x7f020001;
+        public static final int forward=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int library=0x7f020004;
+        public static final int mute=0x7f020005;
+        public static final int next_song=0x7f020006;
+        public static final int off=0x7f020007;
+        public static final int pause=0x7f020008;
+        public static final int play=0x7f020009;
+        public static final int previous_song=0x7f02000a;
+        public static final int repeat=0x7f02000b;
+        public static final int rewind=0x7f02000c;
+        public static final int setting=0x7f02000d;
+        public static final int shuffle=0x7f02000e;
+        public static final int speaker=0x7f02000f;
+        public static final int stop=0x7f020010;
+        public static final int visualization=0x7f020011;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f070000;
-        public static final int album_art=0x7f070015;
+        public static final int album_art=0x7f07000e;
         public static final int album_name=0x7f070009;
         public static final int album_name_label=0x7f070003;
         public static final int album_separator=0x7f070004;
@@ -45,19 +51,26 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int artist_name_label=0x7f070002;
         public static final int artist_separator=0x7f070005;
         public static final int end_time=0x7f07000a;
-        public static final int forward_button=0x7f07000f;
-        public static final int next_song_button=0x7f070010;
-        public static final int pause_button=0x7f07000d;
-        public static final int play_button=0x7f07000e;
-        public static final int previous_song_button=0x7f070013;
-        public static final int rewind_button=0x7f070012;
+        public static final int equalizer_button=0x7f070018;
+        public static final int forward_button=0x7f070013;
+        public static final int library_button=0x7f070016;
+        public static final int mute_button=0x7f070015;
+        public static final int next_song_button=0x7f070014;
+        public static final int pause_button=0x7f070012;
+        public static final int previous_song_button=0x7f07000f;
+        public static final int repeat_button=0x7f070019;
+        public static final int repeat_label=0x7f07001c;
+        public static final int rewind_button=0x7f070010;
+        public static final int shuffle_button=0x7f07001a;
+        public static final int shuffle_label=0x7f07001b;
         public static final int song_seekbar=0x7f07000c;
         public static final int song_title=0x7f070007;
         public static final int start_time=0x7f07000b;
         public static final int stop_button=0x7f070011;
-        public static final int textView1=0x7f070014;
+        public static final int textView1=0x7f07000d;
         public static final int title_label=0x7f070001;
         public static final int title_separator=0x7f070006;
+        public static final int visualization_button=0x7f070017;
     }
     public static final class layout {
         public static final int activity_player=0x7f030000;
@@ -68,23 +81,32 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  Player 
          */
         public static final int artist_name=0x7f050003;
-        public static final int content_description_album_art=0x7f050013;
-        public static final int content_description_forward=0x7f05000d;
-        public static final int content_description_next=0x7f05000e;
+        public static final int content_description_album_art=0x7f050017;
+        public static final int content_description_equalizer=0x7f05000e;
+        public static final int content_description_forward=0x7f050011;
+        public static final int content_description_library=0x7f050010;
+        public static final int content_description_mute=0x7f05000c;
+        public static final int content_description_next=0x7f050012;
         public static final int content_description_pause=0x7f05000a;
-        public static final int content_description_play=0x7f05000c;
+        public static final int content_description_play=0x7f05000d;
         public static final int content_description_previous=0x7f050008;
-        public static final int content_description_repeat=0x7f050010;
+        public static final int content_description_repeat=0x7f050014;
         public static final int content_description_rewind=0x7f050009;
-        public static final int content_description_shuffle=0x7f05000f;
+        public static final int content_description_shuffle=0x7f050013;
         public static final int content_description_stop=0x7f05000b;
-        public static final int default_time=0x7f050011;
+        public static final int content_description_visualization=0x7f05000f;
+        public static final int default_time=0x7f050015;
         public static final int dummy_button=0x7f050002;
         public static final int dummy_content=0x7f050001;
         public static final int no_song_selected=0x7f050007;
+        public static final int repeat_all=0x7f050019;
+        public static final int repeat_off=0x7f05001a;
+        public static final int repeat_song=0x7f050018;
         public static final int separator=0x7f050006;
+        public static final int shuffle_off=0x7f05001c;
+        public static final int shuffle_on=0x7f05001b;
         public static final int song_title=0x7f050004;
-        public static final int time_separator=0x7f050012;
+        public static final int time_separator=0x7f050016;
     }
     public static final class style {
         /** 
