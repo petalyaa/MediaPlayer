@@ -1,5 +1,7 @@
 package org.pet.mediaplayer;
 
+import java.util.List;
+
 import android.content.Context;
 
 public abstract class BasePlayer {
@@ -8,31 +10,22 @@ public abstract class BasePlayer {
 		PAUSE, PLAY, STOP;
 	}
 	
-	private AudioFile audioFile;
+	protected int currentTrackNumber;
+	
+	protected List<AudioFile> audioFiles;
 	
 	protected Context context;
 	
-	private PlayerState state;
+	protected PlayerState state;
 	
-	public BasePlayer(Context context, AudioFile audioFile) {
-		this.setAudioFile(audioFile);
+	public BasePlayer(Context context, List<AudioFile> audioFiles) {
 		this.context = context;
-	}
-
-	public AudioFile getAudioFile() {
-		return audioFile;
-	}
-
-	public void setAudioFile(AudioFile audioFile) {
-		this.audioFile = audioFile;
-	}
-
-	public PlayerState getState() {
-		return state;
-	}
-
-	public void setState(PlayerState state) {
-		this.state = state;
+		currentTrackNumber = -1;
+		this.audioFiles = audioFiles;
 	}
 	
+	public abstract String getNextTrack();
+	
+	public abstract boolean hasNextTrack();
+
 }
