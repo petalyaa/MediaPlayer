@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import org.pet.mediaplayer.PlayerFragmentView;
 import org.pet.mediaplayer.R;
-import org.pet.mediaplayer.R.id;
-import org.pet.mediaplayer.R.layout;
 
 import android.content.Context;
 import android.view.View;

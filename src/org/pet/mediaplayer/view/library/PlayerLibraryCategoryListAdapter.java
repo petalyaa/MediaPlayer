@@ -16,13 +16,10 @@ public class PlayerLibraryCategoryListAdapter extends BaseAdapter {
 	
 	private ArrayList<String> data;
 	
-	private Context context;
-	
 	private LayoutInflater inflater;
 	
 	public PlayerLibraryCategoryListAdapter(ArrayList<String> data, Context context) {
 		this.data = data;
-		this.context = context;
 		this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
