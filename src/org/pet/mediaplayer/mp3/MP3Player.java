@@ -11,6 +11,7 @@ import org.pet.mediaplayer.Player;
 import org.pet.mediaplayer.R;
 import org.pet.mediaplayer.exception.PlayerException;
 import org.pet.mediaplayer.status.MuteStatus;
+import org.pet.mediaplayer.status.RepeatStatus;
 import org.pet.mediaplayer.util.TimeUtil;
 
 import android.content.Context;
@@ -65,6 +66,12 @@ public class MP3Player extends BasePlayer implements Player {
 		AudioFile file = null;
 		String filePath = null;
 		try {
+			
+			// Handle repeat here.
+			if(repeatStatus == RepeatStatus.REPEAT_SONG && currentTrackNumber > 0) {
+				currentTrackNumber--;
+			}
+			
 			Log.v(TAG, "Getting track number " + currentTrackNumber);
 			file = audioFiles.get(currentTrackNumber);
 			filePath = file.getFilePath();
@@ -108,6 +115,17 @@ public class MP3Player extends BasePlayer implements Player {
 	}
 	
 	@Override
+	public boolean hasPreviousTrack() {
+		int nextTrackNumber = currentTrackNumber - 1;
+		AudioFile file = null;
+		try {
+			file = audioFiles.get(nextTrackNumber);
+		} catch (Exception e) {
+		}
+		return file != null && file.getFilePath() != null && !file.getFilePath().equals("");
+	}
+	
+	@Override
 	public boolean hasNextTrack() {
 		int nextTrackNumber = currentTrackNumber + 1;
 		AudioFile file = null;
@@ -118,6 +136,36 @@ public class MP3Player extends BasePlayer implements Player {
 		return file != null && file.getFilePath() != null && !file.getFilePath().equals("");
 	}
 
+	@Override
+	public void next() throws PlayerException {
+		if(hasNextTrack()) {
+			stop();
+			try {
+				play();
+			} catch (PlayerException e) {
+				e.printStackTrace();
+			}
+		} else {
+			Toast.makeText(context, context.getString(R.string.end_of_list), Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	@Override
+	public void previous() throws PlayerException {
+		if(hasPreviousTrack()) {
+			currentTrackNumber--;
+			signalUserInteruption();
+			stop();
+			try {
+				play();
+			} catch (PlayerException e) {
+				e.printStackTrace();
+			}
+		} else {
+			Toast.makeText(context, context.getString(R.string.end_of_list), Toast.LENGTH_SHORT).show();
+		}
+	}
+	
 	@Override
 	public void play() throws PlayerException {
 		try {
@@ -173,8 +221,9 @@ public class MP3Player extends BasePlayer implements Player {
 			mediaPlayer.release();
 			runnable.terminate();
 			setState(PlayerState.STOP);
-			if(isUserInteruption)
+			if(isUserInteruption && repeatStatus != RepeatStatus.REPEAT_SONG) {
 				currentTrackNumber--;
+			}
 			isUserInteruption = false;
 			playButton.setImageResource(R.drawable.play);
 			Log.v(TAG, "Releasing audio track now.");
@@ -284,6 +333,16 @@ public class MP3Player extends BasePlayer implements Player {
 	@Override
 	public void signalUserInteruption() {
 		this.isUserInteruption = true;
+	}
+
+	@Override
+	public void setRepeatStatus(int repeatStatus) {
+		this.repeatStatus = repeatStatus;
+	}
+
+	@Override
+	public void setShuffleStatus(int shuffleStatus) {
+		this.shuffleStatus = shuffleStatus;
 	}
 
 }

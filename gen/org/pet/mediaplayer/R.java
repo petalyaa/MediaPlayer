@@ -98,6 +98,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int default_time=0x7f050015;
         public static final int dummy_button=0x7f050002;
         public static final int dummy_content=0x7f050001;
+        public static final int end_of_list=0x7f05001d;
         public static final int no_song_selected=0x7f050007;
         public static final int repeat_all=0x7f050019;
         public static final int repeat_off=0x7f05001a;

@@ -18,13 +18,21 @@ public interface Player {
 	
 	public void skip(int duration) throws PlayerException;
 	
+	public void next() throws PlayerException;
+	
+	public void previous() throws PlayerException;
+	
 	public void mute() throws PlayerException;
 	
 	public void unmute() throws PlayerException;
 	
 	public int getMuteStatus();
 	
+	public void setRepeatStatus(int repeatStatus);
+	
 	public int getRepeatStatus();
+	
+	public void setShuffleStatus(int shuffleStatus);
 	
 	public int getShuffleStatus();
 	

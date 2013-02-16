@@ -7,7 +7,9 @@ import java.util.List;
 import org.pet.mediaplayer.BasePlayer.PlayerState;
 import org.pet.mediaplayer.listener.OnAudioSeekBarChangeListener;
 import org.pet.mediaplayer.listener.OnMuteButtonClickListener;
+import org.pet.mediaplayer.listener.OnNextTrackButtonClickListener;
 import org.pet.mediaplayer.listener.OnPlayPauseButtonClickListener;
+import org.pet.mediaplayer.listener.OnPreviousTrackButtonClickLitener;
 import org.pet.mediaplayer.listener.OnRepeatButtonClickListener;
 import org.pet.mediaplayer.listener.OnShuffleButtonClickListener;
 import org.pet.mediaplayer.listener.OnStopButtonClickListener;
@@ -96,6 +98,8 @@ public class PlayerActivity extends Activity {
 		ImageButton muteButton = (ImageButton) findViewById(R.id.mute_button);
 		ImageButton shuffleButton = (ImageButton) findViewById(R.id.shuffle_button);
 		ImageButton repeatButton = (ImageButton) findViewById(R.id.repeat_button);
+		ImageButton previousButton = (ImageButton) findViewById(R.id.previous_song_button);
+		ImageButton nextButton = (ImageButton) findViewById(R.id.next_song_button);
 		
 		// TODO : For now, test using mp3, next check file type, then use appropriate player to play the audio.
 		InfoPanelView infoPanel = new InfoPanelView(albumName, songTitle, artistName, endTime);
@@ -116,12 +120,16 @@ public class PlayerActivity extends Activity {
 		OnClickListener onMuteButtonClickListener = new OnMuteButtonClickListener(player, getApplicationContext(), muteButton);
 		OnClickListener onStopButtonClickListener = new OnStopButtonClickListener(player, getApplicationContext(), playPauseButton);
 		OnClickListener onPlayPauseButtonClickListener = new OnPlayPauseButtonClickListener(player, getApplicationContext(), playPauseButton);
+		OnClickListener onNextButtonClickListener = new OnNextTrackButtonClickListener(player, getApplicationContext());
+		OnClickListener onPreviousButtonClickListener = new OnPreviousTrackButtonClickLitener(player, getApplicationContext());
 		
 		shuffleButton.setOnClickListener(onShuffleButtonClickListener);
 		repeatButton.setOnClickListener(onRepeatButtonClickListener);
 		muteButton.setOnClickListener(onMuteButtonClickListener);
 		playPauseButton.setOnClickListener(onPlayPauseButtonClickListener);
 		stopButton.setOnClickListener(onStopButtonClickListener);
+		nextButton.setOnClickListener(onNextButtonClickListener);
+		previousButton.setOnClickListener(onPreviousButtonClickListener);
 		
 	}
 	

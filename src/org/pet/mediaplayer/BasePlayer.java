@@ -27,5 +27,7 @@ public abstract class BasePlayer {
 	public abstract String getNextTrack();
 	
 	public abstract boolean hasNextTrack();
+	
+	public abstract boolean hasPreviousTrack();
 
 }
