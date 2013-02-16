@@ -1,6 +1,7 @@
 package org.pet.mediaplayer;
 
 import org.pet.mediaplayer.BasePlayer.PlayerState;
+import org.pet.mediaplayer.exception.PlayerEqualizerException;
 import org.pet.mediaplayer.exception.PlayerException;
 
 import android.media.MediaPlayer;
@@ -60,4 +61,6 @@ public interface Player {
 	public void signalUserInteruption();
 	
 	public MediaPlayer getMediaPlayerSession();
+	
+	public EqualizerHandler getEqualizer() throws PlayerEqualizerException;
 }

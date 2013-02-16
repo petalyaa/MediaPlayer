@@ -150,6 +150,7 @@ public class PlayerActivity extends Activity {
 		visualizationButton.setOnClickListener(onVisualizationButtonClickListener);
 		libraryButton.setOnClickListener(onLibraryButtonClickListener);
 		
+		visualizationButton.performClick();
 	}
 	
 }

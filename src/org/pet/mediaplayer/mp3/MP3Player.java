@@ -6,9 +6,11 @@ import java.util.List;
 
 import org.pet.mediaplayer.AudioFile;
 import org.pet.mediaplayer.BasePlayer;
+import org.pet.mediaplayer.EqualizerHandler;
 import org.pet.mediaplayer.InfoPanelView;
 import org.pet.mediaplayer.Player;
 import org.pet.mediaplayer.R;
+import org.pet.mediaplayer.exception.PlayerEqualizerException;
 import org.pet.mediaplayer.exception.PlayerException;
 import org.pet.mediaplayer.status.MuteStatus;
 import org.pet.mediaplayer.status.RepeatStatus;
@@ -52,6 +54,7 @@ public class MP3Player extends BasePlayer implements Player {
 		this.muteStatus = MuteStatus.UNMUTE;
 		this.infoPanel = infoPanel;
 		this.playButton = playButton;
+		this.mediaPlayer = new MediaPlayer();
 	}
 	
 	public void startSeekBarThread() {
@@ -348,6 +351,11 @@ public class MP3Player extends BasePlayer implements Player {
 	@Override
 	public MediaPlayer getMediaPlayerSession() {
 		return mediaPlayer;
+	}
+
+	@Override
+	public EqualizerHandler getEqualizer() throws PlayerEqualizerException {
+		return new EqualizerHandler(mediaPlayer);
 	}
 
 }

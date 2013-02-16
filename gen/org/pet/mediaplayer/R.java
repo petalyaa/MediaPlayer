@@ -104,6 +104,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_label=0x7f080001;
         public static final int title_separator=0x7f080006;
         public static final int visualization_button=0x7f080017;
+        public static final int visualizer_relative_layout=0x7f08002e;
     }
     public static final class layout {
         public static final int activity_player=0x7f030000;
