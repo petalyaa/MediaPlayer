@@ -345,4 +345,9 @@ public class MP3Player extends BasePlayer implements Player {
 		this.shuffleStatus = shuffleStatus;
 	}
 
+	@Override
+	public MediaPlayer getMediaPlayerSession() {
+		return mediaPlayer;
+	}
+
 }

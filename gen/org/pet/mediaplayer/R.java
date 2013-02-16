@@ -45,12 +45,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int previous_song=0x7f020011;
         public static final int repeat=0x7f020012;
         public static final int rewind=0x7f020013;
-        public static final int setting=0x7f020014;
-        public static final int shuffle=0x7f020015;
-        public static final int song=0x7f020016;
-        public static final int speaker=0x7f020017;
-        public static final int stop=0x7f020018;
-        public static final int visualization=0x7f020019;
+        public static final int seekbar_background_fill=0x7f020014;
+        public static final int seekbar_progress=0x7f020015;
+        public static final int seekbar_progress_fill=0x7f020016;
+        public static final int seekbar_thumb=0x7f020017;
+        public static final int setting=0x7f020018;
+        public static final int shuffle=0x7f020019;
+        public static final int song=0x7f02001a;
+        public static final int speaker=0x7f02001b;
+        public static final int stop=0x7f02001c;
+        public static final int thumb=0x7f02001d;
+        public static final int visualization=0x7f02001e;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f080000;
@@ -62,15 +67,26 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int artist_name_label=0x7f080002;
         public static final int artist_separator=0x7f080005;
         public static final int end_time=0x7f08000a;
+        public static final int equalizer_125_hz=0x7f080021;
+        public static final int equalizer_16_khz=0x7f080028;
+        public static final int equalizer_1_khz=0x7f080024;
+        public static final int equalizer_250_hz=0x7f080022;
+        public static final int equalizer_2_khz=0x7f080025;
+        public static final int equalizer_31_hz=0x7f08001f;
+        public static final int equalizer_4_khz=0x7f080026;
+        public static final int equalizer_500_hz=0x7f080023;
+        public static final int equalizer_62_hz=0x7f080020;
+        public static final int equalizer_8_khz=0x7f080027;
         public static final int equalizer_button=0x7f080018;
+        public static final int equalizer_master_gain_slider=0x7f08001e;
         public static final int forward_button=0x7f080013;
         public static final int fragment_middle=0x7f08001d;
         public static final int library_button=0x7f080016;
-        public static final int library_category_image=0x7f08001e;
-        public static final int library_category_label=0x7f08001f;
-        public static final int library_category_view=0x7f080021;
-        public static final int library_label=0x7f080022;
-        public static final int main_library_view=0x7f080020;
+        public static final int library_category_image=0x7f080029;
+        public static final int library_category_label=0x7f08002a;
+        public static final int library_category_view=0x7f08002c;
+        public static final int library_label=0x7f08002d;
+        public static final int main_library_view=0x7f08002b;
         public static final int mute_button=0x7f080015;
         public static final int next_song_button=0x7f080014;
         public static final int pause_button=0x7f080012;
@@ -120,14 +136,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int dummy_button=0x7f050002;
         public static final int dummy_content=0x7f050001;
         public static final int end_of_list=0x7f05001d;
+        public static final int equalizer_master_gain=0x7f05001f;
         /**  Equalizer 
          */
         public static final int equalizer_title=0x7f05001e;
-        public static final int library_back=0x7f050021;
-        public static final int library_category=0x7f050022;
+        public static final int library_back=0x7f050022;
+        public static final int library_category=0x7f050023;
         /**  Library 
          */
-        public static final int library_title=0x7f050020;
+        public static final int library_title=0x7f050021;
         public static final int no_song_selected=0x7f050007;
         public static final int repeat_all=0x7f050019;
         public static final int repeat_off=0x7f05001a;
@@ -139,7 +156,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int time_separator=0x7f050016;
         /**  Visualization 
          */
-        public static final int visualization_title=0x7f05001f;
+        public static final int visualization_title=0x7f050020;
     }
     public static final class style {
         /** 

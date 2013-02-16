@@ -3,6 +3,7 @@ package org.pet.mediaplayer;
 import org.pet.mediaplayer.BasePlayer.PlayerState;
 import org.pet.mediaplayer.exception.PlayerException;
 
+import android.media.MediaPlayer;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 
@@ -58,4 +59,5 @@ public interface Player {
 	
 	public void signalUserInteruption();
 	
+	public MediaPlayer getMediaPlayerSession();
 }

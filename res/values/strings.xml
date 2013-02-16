@@ -36,6 +36,7 @@
 	
 	<!-- Equalizer -->
 	<string name="equalizer_title">Equalizer</string>
+	<string name="equalizer_master_gain">Master Gain</string>
 	
 	<!-- Visualization -->
 	<string name="visualization_title">Visualization</string>

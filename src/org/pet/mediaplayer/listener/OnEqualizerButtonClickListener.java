@@ -13,7 +13,7 @@ public class OnEqualizerButtonClickListener extends ButtonClickListener {
 	
 	public OnEqualizerButtonClickListener(Player player, Context context, ViewGroup viewGroup) {
 		super(player, context);
-		this.equalizerView = new PlayerEqualizerView(context, viewGroup);
+		this.equalizerView = new PlayerEqualizerView(player, context, viewGroup);
 	}
 
 	@Override
